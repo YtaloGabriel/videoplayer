@@ -2,6 +2,9 @@
   grid-area: info;
   background-color: var(--color3);
   display: flex;
-  /* min-height: 100%; */
-  align-self: flex-start;
+}
+
+.theaterMode {
+  width: calc(100% - var(--theaterMargin));
+  margin-left: var(--theaterMargin);
 }

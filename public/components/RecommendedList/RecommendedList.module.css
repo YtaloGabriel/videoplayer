@@ -1,5 +1,9 @@
 .recommended {
   grid-area: recommended;
   background-color: var(--color4);
-  /* width: 22rem; */
+  width: 22rem;
+}
+
+.theaterMode {
+  margin-right: var(--theaterMargin);
 }

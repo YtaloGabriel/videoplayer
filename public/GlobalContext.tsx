@@ -1,4 +1,5 @@
 import { createContext, useRef, useState, SetStateAction, Dispatch, MutableRefObject, useEffect } from "react";
+import { FullScreenHandle, useFullScreenHandle } from "react-full-screen";
 
 export const GlobalContext = createContext<any>(null);
 
@@ -13,6 +14,10 @@ export const GlobalStorage = ({children}: any) => {
   if (videoElement.current) {
     videoElement.current.playbackRate = videoSpeed;
   }
+
+  const fullScreenHandle = useFullScreenHandle();
+
+  const [theaterMode, setTheaterMode] = useState<boolean>(false);
 
   // Set video status from context
   useEffect(() => {
@@ -33,6 +38,9 @@ export const GlobalStorage = ({children}: any) => {
     setVideoCurrentTime: Dispatch<SetStateAction<number | null>>;
     videoSpeed: number;
     setVideoSpeed: Dispatch<SetStateAction<number>>;
+    fullScreenHandle: FullScreenHandle;
+    theaterMode: boolean;
+    setTheaterMode: Dispatch<SetStateAction<boolean>>;
   }
 
   const valuesToReturn: ContextValues = {
@@ -44,7 +52,10 @@ export const GlobalStorage = ({children}: any) => {
     videoCurrentTime,
     setVideoCurrentTime,
     videoSpeed,
-    setVideoSpeed
+    setVideoSpeed,
+    fullScreenHandle,
+    theaterMode,
+    setTheaterMode
   }
 
   return (

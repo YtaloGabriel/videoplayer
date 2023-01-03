@@ -1,15 +1,26 @@
 .pageGrid {
+  background-color: var(--dark2);
   display: grid;
   width: 100%;
   max-width: 100rem;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 2rem;
   gap: 2rem;
-  justify-content: center;
-
+  grid-auto-flow: row dense;
   grid-template-areas: "video recommended"
                        "info recommended";
-  grid-template-columns: 2fr auto;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+}
+
+
+.theaterMode {
+  grid-template-areas: "video video"
+                       "info recommended";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  padding: 0;
+  max-width: 100%;
+  align-items: flex-start;
 }

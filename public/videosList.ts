@@ -1,9 +1,9 @@
 export interface IVideoInfo {
   id: number;
-  url: string;
-  thumb: string;
-  title: string;
-  category: string;
+  url?: string;
+  thumb?: string;
+  title?: string;
+  category?: string;
 }
 
 export const videosList: IVideoInfo[] = [
