@@ -1,0 +1,29 @@
+.videoContainer {
+  display: flex;
+  position: relative;
+}
+
+.video {
+  grid-area: video;
+  width: 100%; /* Equals to 16 */
+  height: 56,25%; /* Equals to 9. Format 16:9 */
+  background-color: var(--color2);
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 0 0 2.5rem rgba(255,255,255, .05);
+  position: relative;
+}
+
+.videoBar {
+  background-color: rgba(0,0,0, .7);
+  backdrop-filter: blur(15px);
+  display: flex;
+  width: calc(100% - (var(--spacing) * 2));
+  padding: 1rem;
+  border-radius: .4rem;
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  margin: 1rem;
+  gap: 1rem;
+}

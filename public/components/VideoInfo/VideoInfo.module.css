@@ -1,0 +1,7 @@
+.videoInfo {
+  grid-area: info;
+  background-color: var(--color3);
+  display: flex;
+  /* min-height: 100%; */
+  align-self: flex-start;
+}
