@@ -24,8 +24,8 @@ export default function PlayPauseButton () {
   return (
     <button className={styles.button} onClick={togglePlay}>
       {videoRunning ? 
-        <Image src={pauseIcon} width="36" height="36" alt="Pause Icon"/> :
-        <Image src={playIcon} width="36" height="36" alt="Play Icon"/>
+        <Image src={pauseIcon} width="32" height="32" alt="Pause Icon"/> :
+        <Image src={playIcon} width="32" height="32" alt="Play Icon"/>
       }
     </button>
   )

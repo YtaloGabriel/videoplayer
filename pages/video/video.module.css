@@ -12,6 +12,7 @@
                        "info recommended";
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
+
   align-items: flex-start;
 }
 
@@ -28,5 +29,16 @@
                          "info recommended";
 
     padding: 0;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .pageGrid {
+    grid-template-areas: "video video"
+                         "info info"
+                         "recommended recommended";
+    grid-template-rows: auto auto 1fr;
+    padding: 0;
+    gap: 1rem;
   }
 }

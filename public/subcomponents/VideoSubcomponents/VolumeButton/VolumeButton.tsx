@@ -23,13 +23,14 @@ export default function VolumeButton () {
   
   return (
     <div className={styles.volume}>
-      <Image src={volumeDownIcon} width="24" height="24" alt="Volume Down Icon"/>
+      <Image src={volumeDownIcon} width="22" height="22" alt="Volume Down Icon"/>
       <Box sx={{ width: 50 }}>
         <Slider
           sx={{ mb: -0.5 }}
           aria-label="Volume"
+          size="small"
           color="primary"
-          defaultValue={50}
+          defaultValue={80}
           getAriaValueText={volumeText}
           valueLabelDisplay="auto"
           step={10}
@@ -37,7 +38,7 @@ export default function VolumeButton () {
           max={100}
         />
       </Box>
-      <Image src={volumeUpIcon} width="24" height="24" alt="Volume Up Icon"/>
+      <Image src={volumeUpIcon} width="22" height="22" alt="Volume Up Icon"/>
     </div>
   )
 }

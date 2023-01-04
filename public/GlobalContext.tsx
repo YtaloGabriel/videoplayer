@@ -19,6 +19,8 @@ export const GlobalStorage = ({children}: any) => {
 
   const [theaterMode, setTheaterMode] = useState<boolean>(false);
 
+  const [selectedVideosCategory, setSelectedVideosCategory] = useState<string>('music');
+
   // Set video status from context
   useEffect(() => {
     if (videoRunning) {
@@ -41,6 +43,8 @@ export const GlobalStorage = ({children}: any) => {
     fullScreenHandle: FullScreenHandle;
     theaterMode: boolean;
     setTheaterMode: Dispatch<SetStateAction<boolean>>;
+    selectedVideosCategory: string;
+    setSelectedVideosCategory: Dispatch<SetStateAction<string>>;
   }
 
   const valuesToReturn: ContextValues = {
@@ -55,7 +59,9 @@ export const GlobalStorage = ({children}: any) => {
     setVideoSpeed,
     fullScreenHandle,
     theaterMode,
-    setTheaterMode
+    setTheaterMode,
+    selectedVideosCategory,
+    setSelectedVideosCategory,
   }
 
   return (

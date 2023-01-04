@@ -30,12 +30,16 @@ export default function VideoComponent({id}: IVideoInfo) {
       <FullScreen className={styles.fullScreenElement} handle={fullScreenHandle}>      
         <section className={`${styles.videoContainer} ${theaterMode && styles.theaterMode}`} onClick={handleClickOnVideoElement}>
           <section className={styles.videoBar}>
-            <PlayPauseButton/>
-            <VolumeButton />
             <TimeStamp />
-            <PlaySpeed />
-            <TheaterButton />
-            <ExpandButton />
+            <div className={styles.leftComponents}>
+              <PlayPauseButton/>
+              <VolumeButton />
+            </div>
+            <div className={styles.rightComponents}>
+              <PlaySpeed />
+              <TheaterButton />
+              <ExpandButton />
+            </div>
           </section>
 
           <video 

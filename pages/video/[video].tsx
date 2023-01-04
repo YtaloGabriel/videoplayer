@@ -8,11 +8,16 @@ import RecommendedList from "../../public/components/RecommendedList/Recommended
 import VideoInfo from "../../public/components/VideoInfo/VideoInfo";
 import { GlobalContext } from "../../public/GlobalContext";
 
+export interface VideoTitle {
+  title: string | undefined;
+}
+
 export default function Video() {
   const {theaterMode} = useContext(GlobalContext)
   
   const { query } = useRouter();
   const [videoInfo, setVideoInfo] = useState<IVideoInfo | null>(null);
+
 
   // Check if the video id exists
   useEffect(() => {
@@ -43,7 +48,7 @@ export default function Video() {
           />
           
           <RecommendedList/>
-          <VideoInfo/> 
+          <VideoInfo title={videoInfo.title}/> 
         </section>
       }
     </>

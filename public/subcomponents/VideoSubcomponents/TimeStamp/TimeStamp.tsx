@@ -61,7 +61,7 @@ export default function TimeStamp () {
 
       <Box sx={{ width: '100%' }}>
         <Stack spacing={2} direction="row" alignItems="center">
-          <Slider value={timebarValue} onChange={handleTimebarChange} />
+          <Slider value={timebarValue} size="small" onChange={handleTimebarChange} />
         </Stack>
       </Box>
 
