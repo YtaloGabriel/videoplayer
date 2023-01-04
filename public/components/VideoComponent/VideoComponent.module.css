@@ -1,10 +1,9 @@
 .fullScreenElement {
   grid-area: video;
+  background-color: #000;
   width: 100%;
   height: 100%;
   max-height: 80vh;
-  display: flex;
-  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,13 +14,16 @@
 
 .videoContainer {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   position: relative;
 }
 
 .video {
   height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -42,4 +44,21 @@
 .theaterMode {
   width: auto;
   height: 100%;
+}
+
+@media only screen and (max-width: 1280px) {
+  .fullScreenElement {
+    max-height: 100%;
+    width: 100%;
+  }
+
+  .videoContainer {
+    width: auto;
+    height: 100%;
+  }
+
+  .video {
+    height: 100%;
+    width: 100%;
+  }
 }

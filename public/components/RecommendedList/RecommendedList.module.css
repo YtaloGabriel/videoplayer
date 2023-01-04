@@ -7,3 +7,12 @@
 .theaterMode {
   margin-right: var(--theaterMargin);
 }
+
+@media only screen and (max-width: 1024px) {
+  .recommended {
+    width: 18rem;
+  }
+}
+
+/* @media only screen and (max-width: 768px) {} */
+/* @media only screen and (max-width: 320px) {} */
