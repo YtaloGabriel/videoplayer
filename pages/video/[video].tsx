@@ -32,6 +32,8 @@ export default function Video() {
       setVideoInfo(video[0]);
     }
 
+    console.log(query.video)
+
   }, [query.video])
 
   // Page renderization
@@ -42,9 +44,6 @@ export default function Video() {
           <VideoComponent
             id={videoInfo.id}
             url={videoInfo.url}
-            thumb={videoInfo.thumb}
-            title={videoInfo.title}
-            category={videoInfo.category}
           />
           
           <RecommendedList/>

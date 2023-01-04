@@ -8,6 +8,6 @@ export default function VideoInfo({title}: VideoTitle) {
   const {theaterMode} = useContext(GlobalContext);
 
   return <section className={`${styles.videoInfo} ${theaterMode && styles.theaterMode}`}>
-    {title || 'Title here'}
+    {title}
   </section>
 }

@@ -12,7 +12,7 @@ import TheaterButton from '../../subcomponents/VideoSubcomponents/TheaterButton/
 import ExpandButton from '../../subcomponents/VideoSubcomponents/ExpandButton/ExpandButton';
 import { FullScreen } from 'react-full-screen';
 
-export default function VideoComponent({id}: IVideoInfo) {
+export default function VideoComponent({id, url}: IVideoInfo) {
   const {videoElement, setVideoCurrentTime, videoRunning, setVideoRunning, fullScreenHandle, theaterMode} = useContext(GlobalContext)
 
   const getTimeStamp = () => {
@@ -46,8 +46,9 @@ export default function VideoComponent({id}: IVideoInfo) {
             ref={videoElement}
             className={styles.video}
             onTimeUpdate={getTimeStamp}
+            key={`vd${id}`}
           >
-            <source src={`../../assets/videos/${id}.mp4`} />
+            <source src={`../..${url}`} />
           </video>
         </section>
       </FullScreen>
