@@ -19,10 +19,11 @@
   padding: 1.5rem;
   border-radius: .5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+  margin: 0 1rem;
 }
 
 .title {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .welcomeCard > p {
