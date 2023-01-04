@@ -8,6 +8,7 @@ export const GlobalStorage = ({children}: any) => {
   const [videoVolume, setVideoVolume] = useState<number>(100);
   const [videoCurrentTime, setVideoCurrentTime] = useState<number | null>(null);
   const [videoSpeed, setVideoSpeed] = useState<number>(1);
+  const [timebarValue, setTimebarValue] = useState<number>(0);
 
   const videoElement = useRef<HTMLVideoElement | null>(null);
 
@@ -45,6 +46,8 @@ export const GlobalStorage = ({children}: any) => {
     setTheaterMode: Dispatch<SetStateAction<boolean>>;
     selectedVideosCategory: string;
     setSelectedVideosCategory: Dispatch<SetStateAction<string>>;
+    timebarValue: number;
+    setTimebarValue: Dispatch<SetStateAction<number>>;
   }
 
   const valuesToReturn: ContextValues = {
@@ -62,10 +65,12 @@ export const GlobalStorage = ({children}: any) => {
     setTheaterMode,
     selectedVideosCategory,
     setSelectedVideosCategory,
+    timebarValue,
+    setTimebarValue,
   }
 
   return (
-    <GlobalContext.Provider value={valuesToReturn}>
+    <GlobalContext.Provider value={valuesToReturn as ContextValues}>
       {children}
     </GlobalContext.Provider>
   );

@@ -1,23 +1,23 @@
 import { useRouter } from "next/router"
 import { IVideoInfo, videosList } from "../../public/videosList"
 import { useContext, useEffect, useState } from "react";
-
-import VideoComponent from "../../public/components/VideoComponent/VideoComponent";
-import styles from './video.module.css';
-import RecommendedList from "../../public/components/RecommendedList/RecommendedList";
-import VideoInfo from "../../public/components/VideoInfo/VideoInfo";
 import { GlobalContext } from "../../public/GlobalContext";
 
-export interface VideoTitle {
+import VideoComponent from "../../public/components/VideoComponent/VideoComponent";
+import RecommendedList from "../../public/components/RecommendedList/RecommendedList";
+import VideoInfo from "../../public/components/VideoInfo/VideoInfo";
+
+import styles from './video.module.css';
+
+export interface IVideoTitle {
   title: string | undefined;
 }
 
 export default function Video() {
   const {theaterMode} = useContext(GlobalContext)
-  
   const { query } = useRouter();
+  
   const [videoInfo, setVideoInfo] = useState<IVideoInfo | null>(null);
-
 
   // Check if the video id exists
   useEffect(() => {

@@ -8,11 +8,10 @@ import CategoryButton from '../../subcomponents/RecommendedSubcomponents/Categor
 import styles from './RecommendedList.module.css';
 
 export default function RecommendedList() {
+  const {selectedVideosCategory, theaterMode} = useContext(GlobalContext);
+  
   const [categoryData, setCategoryData] = useState<any>(null);
   const [videosByCategory, setVideosByCategory] = useState<any>(null);
-  const {selectedVideosCategory} = useContext(GlobalContext)
-
-  const {theaterMode} = useContext(GlobalContext);
 
   // Get the list of categories from videosList archive
   useEffect(() => {

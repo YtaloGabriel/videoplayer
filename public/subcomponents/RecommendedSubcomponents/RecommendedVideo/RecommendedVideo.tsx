@@ -14,10 +14,18 @@ export interface IRecommendedVideo {
 }
 
 export default function RecommendedVideo ({id, thumb, title}: IRecommendedVideo) {
-  const {setVideoRunning} = useContext(GlobalContext);
+  const {
+    setVideoRunning, 
+    setTimebarValue, 
+    setVideoCurrentTime, 
+    videoElement
+  } = useContext(GlobalContext);
   
   const handleLinkClick = () => {
+    videoElement.current.currentTime = 0;
     setVideoRunning(false);
+    setTimebarValue(0);
+    setVideoCurrentTime(0);
   }
 
   return (

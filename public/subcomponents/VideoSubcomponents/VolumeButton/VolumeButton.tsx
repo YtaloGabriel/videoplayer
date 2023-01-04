@@ -1,18 +1,18 @@
 import { GlobalContext } from '../../../GlobalContext';
 import { useContext } from 'react';
 import { Box, Slider } from '@mui/material'
-
-import styles from './VolumeButton.module.css'
 import Image from 'next/image';
 
 import volumeDownIcon from '../../../assets/icons/volumedown.svg';
 import volumeUpIcon from '../../../assets/icons/volumeup.svg';
 
+import styles from './VolumeButton.module.css'
+
 export default function VolumeButton () {
   const {videoElement} = useContext(GlobalContext)
 
   function volumeText(value: number) {
-    const valueToPercent = value / 100;
+    const valueToPercent = (value / 100);
 
     if (videoElement.current) {
       videoElement.current.volume = valueToPercent

@@ -1,13 +1,15 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../../GlobalContext'
+import { IVideoTitle } from '../../../pages/video/[video]';
 
 import styles from './VideoInfo.module.css'
-import { VideoTitle } from '../../../pages/video/[video]';
 
-export default function VideoInfo({title}: VideoTitle) {
+export default function VideoInfo({title}: IVideoTitle) {
   const {theaterMode} = useContext(GlobalContext);
 
-  return <section className={`${styles.videoInfo} ${theaterMode && styles.theaterMode}`}>
-    {title}
-  </section>
+  return (
+    <section className={`${styles.videoInfo} ${theaterMode && styles.theaterMode}`}>
+      {title}
+    </section>
+  );
 }

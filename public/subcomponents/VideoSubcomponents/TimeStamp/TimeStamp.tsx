@@ -5,26 +5,31 @@ import { GlobalContext } from '../../../GlobalContext';
 import styles from './TimeStamp.module.css'
 
 export default function TimeStamp () {
-  const [timebarValue, setTimebarValue] = useState<number>(0);
+  const {
+    videoElement, 
+    videoCurrentTime, 
+    setVideoRunning, 
+    timebarValue,
+    setTimebarValue
+  } = useContext(GlobalContext);
 
+  const [videoMinutes, setVideoMinutes] = useState<number>(0);
+  const [videoSeconds, setVideoSeconds] = useState<number>(0);
+  const [videoMinutesDuration, setVideoMinutesDuration] = useState<number>(0);
+  const [videoSecondsDuration, setVideoSecondsDuration] = useState<number>(0);
+  
+  // Transformed current time
+  const minutes = videoMinutes < 10 ? ('0' + videoMinutes) : videoMinutes;
+  const seconds = videoSeconds < 10 ? ('0' + videoSeconds) : videoSeconds;
+  
+  const allMinutes = videoMinutesDuration < 10 ? ('0' + videoMinutesDuration) : videoMinutesDuration;
+  const allSeconds = videoSecondsDuration < 10 ? ('0' + videoSecondsDuration) : videoSecondsDuration;
+  
   const handleTimebarChange = (event: Event, newTimebarValue: number | number[]) => {
     setTimebarValue(newTimebarValue as number);
 
     videoElement.current.currentTime = (videoElement.current.duration / 100) * (newTimebarValue as number);
   };
-
-  const {videoElement, videoCurrentTime, setVideoRunning} = useContext(GlobalContext);
-  const [videoMinutes, setVideoMinutes] = useState<number>(0);
-  const [videoSeconds, setVideoSeconds] = useState<number>(0);
-  const [videoMinutesDuration, setVideoMinutesDuration] = useState<number>(0);
-  const [videoSecondsDuration, setVideoSecondsDuration] = useState<number>(0);
-
-  // Transformed current time
-  const minutes = videoMinutes < 10 ? ('0' + videoMinutes) : videoMinutes;
-  const seconds = videoSeconds < 10 ? ('0' + videoSeconds) : videoSeconds;
-
-  const allMinutes = videoMinutesDuration < 10 ? ('0' + videoMinutesDuration) : videoMinutesDuration;
-  const allSeconds = videoSecondsDuration < 10 ? ('0' + videoSecondsDuration) : videoSecondsDuration;
 
   // Transform the video current time
   useEffect(() => {
@@ -51,7 +56,7 @@ export default function TimeStamp () {
         setVideoSeconds(0);
       }
     }
-  }, [videoCurrentTime, videoElement, setVideoRunning]);
+  }, [videoCurrentTime, videoElement, setVideoRunning, setTimebarValue]);
 
   return (
     <div className={styles.timeStamp}>

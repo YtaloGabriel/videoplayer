@@ -1,12 +1,13 @@
 import { useContext, useRef } from 'react';
-import styles from './CategoryButton.module.css';
 import { GlobalContext } from '../../../GlobalContext';
 
-export interface CategoryButton {
+import styles from './CategoryButton.module.css';
+
+export interface ICategoryButton {
   categoryName: string | undefined;
 }
 
-export default function CategoryButton ({categoryName}: CategoryButton) {
+export default function CategoryButton ({categoryName}: ICategoryButton) {
   const buttonElement = useRef<HTMLButtonElement | null>(null)
   const {setSelectedVideosCategory} = useContext(GlobalContext);
 
@@ -19,6 +20,8 @@ export default function CategoryButton ({categoryName}: CategoryButton) {
   }
 
   return (
-    <button ref={buttonElement} className={styles.button} onClick={handleButtonClick} value={categoryName}>{categoryName || 'Category'}</button>
+    <button ref={buttonElement} className={styles.button} onClick={handleButtonClick} value={categoryName}>
+      {categoryName || 'Category'}
+    </button>
   )
 }

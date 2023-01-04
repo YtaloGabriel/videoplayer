@@ -5,6 +5,7 @@
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
+  padding-bottom: 4rem !important;
   gap: 1.5rem;
   grid-auto-flow: row dense;
   grid-template-areas: "video recommended"
@@ -16,6 +17,7 @@
 }
 
 .theaterMode {
+  max-width: 100%;
   grid-template-areas: "video video"
                        "info recommended";
 

@@ -14,9 +14,6 @@
 
   --spacing: 1rem;
   --theaterMargin: 5rem !important;
-
-  --tabletWidth: 768px;
-  --mobilepWidth: 320px;
 }
 
 * {

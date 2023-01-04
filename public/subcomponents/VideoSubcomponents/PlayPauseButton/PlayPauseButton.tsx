@@ -1,14 +1,18 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { GlobalContext } from '../../../GlobalContext';
 import Image from 'next/image';
-
-import styles from './PlayPauseButton.module.css'
 
 import playIcon from '../../../assets/icons/play.svg';
 import pauseIcon from '../../../assets/icons/pause.svg';
 
+import styles from './PlayPauseButton.module.css'
+
 export default function PlayPauseButton () {
-  const {videoRunning, setVideoRunning, videoElement} = useContext(GlobalContext);
+  const {
+    videoRunning, 
+    setVideoRunning, 
+    videoElement
+  } = useContext(GlobalContext);
 
   // Set video status by button click
   const togglePlay = () => {

@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
-import styles from './PlaySpeed.module.css';
 import { GlobalContext } from '../../../GlobalContext';
+
+import styles from './PlaySpeed.module.css';
 
 export default function PlaySpeed () {
   const {setVideoSpeed} = useContext(GlobalContext);

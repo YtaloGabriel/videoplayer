@@ -1,4 +1,4 @@
-import { GlobalContext, GlobalStorage } from '../public/GlobalContext'
+import { GlobalStorage } from '../public/GlobalContext'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
