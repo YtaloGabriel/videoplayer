@@ -9,6 +9,12 @@
   margin-left: var(--theaterMargin);
 }
 
+@media only screen and (max-width: 1024px) {
+  .videoInfo {
+    margin-left: 2rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .videoInfo {
     margin-left: 1rem;

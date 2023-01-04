@@ -1,6 +1,8 @@
 .recommended {
   grid-area: recommended;
-  background-color: var(--color3);
+  background-color: var(--dark3);
+  padding: 1rem;
+  border-radius: .5rem;
   width: 22rem;
   display: flex;
   flex-direction: column;
@@ -13,6 +15,11 @@
   gap: 1rem;
 }
 
+.selectedCategory {
+  display: flex;
+  gap: .5rem;
+}
+
 .theaterMode {
   margin-right: var(--theaterMargin);
 }
@@ -20,6 +27,7 @@
 @media only screen and (max-width: 1024px) {
   .recommended {
     width: 18rem;
+    margin-right: 2rem;
   }
 }
 

@@ -1,0 +1,14 @@
+.link {
+  display:flex;
+  flex-flow: row nowrap;
+  gap: .5rem;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+}
+
+.title {
+  font-size: .9rem;
+}

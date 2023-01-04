@@ -32,8 +32,6 @@ export default function Video() {
       setVideoInfo(video[0]);
     }
 
-    console.log(query.video)
-
   }, [query.video])
 
   // Page renderization

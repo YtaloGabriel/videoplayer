@@ -1,12 +1,11 @@
 .pageGrid {
-  background-color: var(--dark2);
   display: grid;
   width: 100%;
   max-width: 100rem;
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-auto-flow: row dense;
   grid-template-areas: "video recommended"
                        "info recommended";

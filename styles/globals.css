@@ -45,3 +45,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.videoButton {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}

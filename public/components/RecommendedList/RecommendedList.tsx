@@ -29,7 +29,7 @@ export default function RecommendedList() {
   return (
     <section className={`${styles.recommended} ${theaterMode && styles.theaterMode}`}>
     
-      <div className={styles.selectCategory}>
+      <div className={styles.selectedCategory}>
         {categoryData && categoryData.map((category: string) => {
           return <CategoryButton key={category} categoryName={category}/>
         })}

@@ -1,6 +1,8 @@
 import { useContext } from 'react';
-import styles from './TheaterButton.module.css';
 import { GlobalContext } from '../../../GlobalContext';
+import Image from 'next/image';
+
+import theater from '../../../assets/icons/theater.svg';
 
 export default function TheaterButton () {
   const {theaterMode, setTheaterMode} = useContext(GlobalContext);
@@ -10,8 +12,8 @@ export default function TheaterButton () {
   }
 
   return (
-    <button className={styles.button} onClick={toggleTheaterMode}>
-      Theater
+    <button className={"videoButton"} onClick={toggleTheaterMode}>
+      <Image src={theater} width="22" height="22" alt="Theater Mode Icon"/>
     </button>
   )
 }

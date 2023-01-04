@@ -2,6 +2,9 @@ import React, {useContext} from 'react';
 
 import styles from './ExpandButton.module.css'
 import { GlobalContext } from '../../../GlobalContext';
+import Image from 'next/image';
+
+import expand from '../../../assets/icons/expand.svg';
 
 export default function ExpandButton () {
   const {fullScreenHandle} = useContext(GlobalContext)  
@@ -16,7 +19,9 @@ export default function ExpandButton () {
 
   return (
     <>
-      <button className={styles.button} onClick={toggleFullScreenMode}>Expand</button>
+      <button className={"videoButton"} onClick={toggleFullScreenMode}>
+        <Image src={expand} width="22" height="22" alt="Expanded Mode Icon"/>
+      </button>
     </>
   )
 }
